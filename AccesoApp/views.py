@@ -1,5 +1,8 @@
 from django.shortcuts import render
+from AccesoApp.models import *
 
 # Create your views here.
 def acceso(request):
-    return render(request,"AccesoApp/acceso.html")
+   items=Item.objects.all()# se depliegan todas la data en la bd
+
+   return render(request,"AccesoApp/acceso.html",{"items":items})
