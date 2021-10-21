@@ -53,7 +53,3 @@ class FotosNoticia(models.Model):
 
     def __str__(self):
         return str(self.nombre) #como va a aparecer en el panel admin    
-
-
-class Pruebas(models.Model):
-    pass         
