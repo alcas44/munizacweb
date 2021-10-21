@@ -52,4 +52,8 @@ class FotosNoticia(models.Model):
         verbose_name_plural="fotosnoticias"
 
     def __str__(self):
-        return str(self.nombre) #como va a aparecer en el panel admin     
+        return str(self.nombre) #como va a aparecer en el panel admin    
+
+
+class Pruebas(models.Model):
+    pass         
