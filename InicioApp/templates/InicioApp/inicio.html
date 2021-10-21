@@ -1,0 +1,120 @@
+{% extends "InicioApp/base.html" %}
+
+{% load static %}
+
+
+{% block content %}
+<!-- ======= Imagen de esta Pagina ======= -->
+<section id="hero" class="d-flex justify-content-center align-items-center">
+    <div class="container position-relative" data-aos="zoom-in" data-aos-delay="100">
+      <h1>Municipalidad de Zacapa,<br>Admin 2020-2024</h1>
+      <div id="TT_JetArBYxdzB91a8UMfzDzzjDjtuUTcDlbYEtEZioKEj"></div>
+      <script type="text/javascript" src="https://www.tutiempo.net/s-widget/l_JetArBYxdzB91a8UMfzDzzjDjtuUTcDlbYEtEZioKEj"></script>
+
+    </div>
+  </section><!-- Fin Imagen de esta Pagina -->
+
+
+  <main id="main">
+
+    <!-- ======= Primera Seccion Seccion COVID-19 ======= -->
+    <section id="about" class="about">
+        <div class="container" data-aos="fade-up">
+  
+          <div class="row">
+            <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
+              <img src="{% static 'InicioApp/assets/img/img_primera_sec/covid19.jpg ' %}" class="img-fluid" alt="">
+            </div>
+            <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
+              <h3>Prevension Contra COVID-19</h3>
+              <p class="fst-italic">
+                Recomendaciones a la cuales debes de aprender para evitar el contagio
+              </p>
+              <ul>
+                <li><i class="bi bi-check-circle"></i> Utiliza mascarilla</li>
+                <li><i class="bi bi-check-circle"></i> Lávate las manos</li>
+                <li><i class="bi bi-check-circle"></i> Mantén una distancia segura</li>
+              </ul>
+              <p>
+                Juntos Saldremos Adelante Municipalidad de Zacapa
+              </p>
+  
+            </div>
+          </div>
+  
+        </div>
+      </section><!-- Fin Prevension Covid-19 -->
+
+       <!-- ======= Breadcrumbs Seccion de Eventos ======= -->
+    <div class="breadcrumbs" data-aos="fade-in">
+        <div class="container">
+          <h2>Eventos</h2>
+          <p>Ve los Eventos y Actividades que la Municipalidad de Zacapa Realiza</p>
+        </div>
+      </div><!-- Fin Breadcrumbs Seccion de Noticias -->
+      
+ <!-- ======= Seccion de Noticias ======= -->
+      <div class="container" style="padding: 20px;;">
+        {% for eventos in eventos %}
+          <div class="card mb-3" style="width: 350px; display: inline-block;">
+              <img src="{{eventos.imagen.url}}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title text-center"><strong>{{eventos.nombre}}</strong></h5>
+                <p class="card-text text-center">{{eventos.descripcion}}</p>
+                <p class="card-text text-center">{{eventos.oficina}}</p>
+                <p class="card-text text-center">Fecha: {{eventos.fecha}}<br> Horario: {{eventos.hora}}</p>
+                <p class="card-text text-center"><small class="text-muted">Autor: {{eventos.usuario}}</small></p>
+                <p class="card-text text-center"><small class="text-muted">Hecho: {{eventos.updated}}</small></p>
+              </div>
+            </div>
+        {% endfor %}
+        </div>
+
+
+     
+     
+
+  </main><!-- Fin Seccion de Eventos -->
+  
+
+
+  <main id="main" data-aos="fade-in">
+
+    <!-- ======= Breadcrumbs Requisitos ======= -->
+    <div class="breadcrumbs">
+      <div class="container">
+        <h2>Requisitos Varios</h2>
+        <p>Esta Seccion te ayudara para saber el procedimiento o los Requisitos para una gestion</p>
+      </div>
+    </div><!-- End Breadcrumbs -->
+
+    <!-- ======= Courses Section ======= -->
+    <section id="courses" class="courses">
+      <div class="container" data-aos="fade-up">
+        
+        <div class="row" data-aos="zoom-in" data-aos-delay="100">
+          {% for requisitos in requisitos %}  
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <div class="course-item">
+              <img src="{{requisitos.imagen.url}}" class="img-fluid" alt="...">
+              <div class="course-content">
+                <h3><a href="#">{{requisitos.nombre}}</a></h3>
+                <p>{{requisitos.oficina}}</p>
+                <h5><a type="button" class="btn btn-danger" href="{{requisitos.documento.url}}" target="_blank">PDF</a></h5>
+                <div class="trainer d-flex justify-content-between align-items-center">
+                  <div class="trainer-profile d-flex align-items-center">
+                    <span>Publico: {{requisitos.usuario}}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> <!-- End Course Item-->
+          {% endfor %}    
+        </div>
+        
+      </div>
+    </section><!-- End Courses Section -->
+
+  </main><!-- End #main -->  
+
+{% endblock %}

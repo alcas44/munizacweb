@@ -1,0 +1,115 @@
+{% extends "InicioApp/base.html" %}
+
+{% load static %}
+
+
+{% block content %}
+<!-- ======= Imagen de esta Pagina ======= -->
+<section id="hero" class="d-flex justify-content-center align-items-center">
+    <div class="container position-relative" data-aos="zoom-in" data-aos-delay="100">
+      <h1>Municipalidad de Zacapa,<br>Admin 2020-2024</h1><br>
+      <div id="TT_JetArBYxdzB91a8UMfzDzzjDjtuUTcDlbYEtEZioKEj"></div>
+      <script type="text/javascript" src="https://www.tutiempo.net/s-widget/l_JetArBYxdzB91a8UMfzDzzjDjtuUTcDlbYEtEZioKEj"></script>
+
+    </div>
+  </section><!-- Fin Imagen de esta Pagina -->
+
+  
+  <main id="main">
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs" data-aos="fade-in">
+      <div class="container">
+        <h2>Nuestra Ciudad</h2>
+        <p>Conoce Sobre La Ciudad de Zacapa, Lugares por Visitar llenos de Historia</p>
+      </div>
+    </div><!-- End Breadcrumbs -->
+
+    <!-- ======= Section Galeria por un top 2 ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+        {% for lugares in lugares %}     
+        <div class="row">
+          <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
+            <img src="{{lugares.imagen.url}}" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
+            <h3>{{lugares.nombre}}</h3><br>
+            <h6>{{lugares.ubicacion}}</h6>
+            <p class="fst-italic">
+              {{lugares.descripcion}}
+            </p>
+            <ul>
+              <li><i class="bi bi-check-circle"></i>{{lugares.punto1}}</li>
+              <li><i class="bi bi-check-circle"></i>{{lugares.punto2}}</li>
+              <li><i class="bi bi-check-circle"></i>{{lugares.punto3}}</li>
+            </ul>
+            <p>
+              Recomendado por: {{lugares.usuario}}
+            </p>
+
+          </div>
+        </div>
+      {% endfor %}  
+      </div>
+    </section><!-- End About Section -->
+  
+</main>
+
+<main id="main">
+    <!-- ======= Seccion de Recomendaciones Turisticas ======= -->
+    <section id="testimonials" class="testimonials">
+      <div class="container" data-aos="fade-up">
+
+          <!-- ======= Breadcrumbs ======= -->
+          <div class="breadcrumbs">
+            <div class="container">
+              <h2>Municipalidad de Zacapa Te Recomienda</h2>
+            </div>
+          </div><!-- End Breadcrumbs -->
+      </div>    
+    </section>   
+          <!-- ======= Trainers Section ======= -->
+          <section id="trainers" class="trainers">
+            <div class="container" data-aos="fade-up">
+      
+              <div class="row" data-aos="zoom-in" data-aos-delay="100">
+                {% for recomendados in recomendados %} 
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                  
+                  <div class="member">
+                    <img src="{{recomendados.imagen.url}}" class="img-fluid" alt="">
+                    <div class="member-content">
+                      <h4>{{recomendados.nombre}}</h4>
+                      <span>{{recomendados.ubicacion}}</span>
+                      <p>
+                        {{recomendados.descripcion}}
+                      </p>
+                      <div class="social">
+                        <a href=""><i class="bi bi-twitter"></i></a>
+                        <a href=""><i class="bi bi-facebook"></i></a>
+                        <a href=""><i class="bi bi-instagram"></i></a>
+                        <a href=""><i class="bi bi-linkedin"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                  
+                </div>
+      
+                {% endfor %}
+      
+              </div>
+      
+            </div>
+          </section><!-- End Trainers Section -->
+      
+    
+</main><!-- End #main -->
+
+
+
+
+
+
+
+
+{% endblock %}

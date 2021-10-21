@@ -1,0 +1,67 @@
+{% extends "InicioApp/base.html" %}
+
+{% load static %}
+
+
+{% block content %}
+<!-- ======= Imagen de esta Pagina ======= -->
+<section id="hero" class="d-flex justify-content-center align-items-center">
+    <div class="container position-relative" data-aos="zoom-in" data-aos-delay="100">
+      <h1>Municipalidad de Zacapa,<br>Admin 2020-2024</h1><br>
+      <div id="TT_JetArBYxdzB91a8UMfzDzzjDjtuUTcDlbYEtEZioKEj"></div>
+      <script type="text/javascript" src="https://www.tutiempo.net/s-widget/l_JetArBYxdzB91a8UMfzDzzjDjtuUTcDlbYEtEZioKEj"></script>
+
+    </div>
+  </section><!-- Fin Imagen de esta Pagina -->
+
+      
+ <!-- Seccion de Noticias -->
+ <main id="main" data-aos="fade-in">
+
+  <!-- ======= Breadcrumbs Noticias ======= -->
+  <div class="breadcrumbs">
+    <div class="container">
+        {% for titulo in titulo %}
+            <h3 class="text-white text-center">{{titulo.nombre}}</h3>
+            <h3 class="text-white text-center">{{titulo.ubicacion}}</h3>
+            <h3 class="text-white text-center">{{titulo.oficina}}</h3>
+        {% endfor %}
+    </div>
+  </div><!-- End Breadcrumbs -->
+  <br><br>
+  {% for titulo in titulo %}
+  <h4 class="text-secondary text-center">{{titulo.descripcion}}</h4>
+{% endfor %}
+  <!-- ======= Trainers Section ======= -->
+  <section id="trainers" class="trainers">
+    <div class="container" data-aos="fade-up">
+      <div class="row" data-aos="zoom-in" data-aos-delay="100">
+        {% for posts in posts %}   
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+          <div class="member">
+            <img src="{{posts.imagen.url}}" class="img-fluid" alt="">
+            <div class="member-content">
+              <span>Publico: {{posts.usuario}}</span>
+              <span>Fecha: {{posts.updated}}</span>
+            </div>
+          </div>
+        </div>
+        {% endfor %}  
+      </div>
+
+    </div>
+  </section><!-- End Trainers Section -->
+
+</main><!-- End #main -->
+      
+        </main><!-- End #main -->
+
+
+
+
+
+
+
+
+{% endblock %}
+

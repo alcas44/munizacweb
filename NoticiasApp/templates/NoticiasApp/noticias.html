@@ -1,0 +1,71 @@
+{% extends "InicioApp/base.html" %}
+
+{% load static %}
+
+
+{% block content %}
+<!-- ======= Imagen de esta Pagina ======= -->
+<section id="hero" class="d-flex justify-content-center align-items-center">
+    <div class="container position-relative" data-aos="zoom-in" data-aos-delay="100">
+      <h1>Municipalidad de Zacapa,<br>Admin 2020-2024</h1><br>
+      <div id="TT_JetArBYxdzB91a8UMfzDzzjDjtuUTcDlbYEtEZioKEj"></div>
+      <script type="text/javascript" src="https://www.tutiempo.net/s-widget/l_JetArBYxdzB91a8UMfzDzzjDjtuUTcDlbYEtEZioKEj"></script>
+
+    </div>
+  </section><!-- Fin Imagen de esta Pagina -->
+
+      
+ <!-- Seccion de Noticias -->
+ <main id="main" data-aos="fade-in">
+
+  <!-- ======= Breadcrumbs Noticias ======= -->
+  <div class="breadcrumbs">
+    <div class="container">
+      <h2>Noticias</h2>
+      <p>Ve las Noticias mas relevantes de la Municipalidad de Zacapa</p>
+    </div>
+  </div><!-- End Breadcrumbs -->
+
+  <!-- ======= Trainers Section ======= -->
+  <section id="trainers" class="trainers">
+    <div class="container" data-aos="fade-up">
+      <div class="row" data-aos="zoom-in" data-aos-delay="100">
+        {% for noticias in noticias %}   
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+          <div class="member">
+            <img src="{{noticias.imagen.url}}" class="img-fluid" alt="">
+            <div class="member-content">
+              <h4><a href="{% url 'notidetalle' noticias.id %}">{{noticias.nombre}}</a></h4>
+              <span>{{noticias.oficina}}</span>
+              <span>Publico: {{noticias.usuario}}</span>
+              <p>
+                {{noticias.descripcion}}
+              </p>
+              <div class="social">
+                <a href="#"><i class="bi bi-twitter"></i></a>
+                <a href="#"><i class="bi bi-facebook"></i></a>
+                <a href="#"><i class="bi bi-instagram"></i></a>
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+              </div>
+              <span>Fecha: {{noticias.updated}}</span>
+            </div>
+          </div>
+        </div>
+        {% endfor %}  
+      </div>
+
+    </div>
+  </section><!-- End Trainers Section -->
+
+</main><!-- End #main -->
+      
+        </main><!-- End #main -->
+
+
+
+
+
+
+
+
+{% endblock %}
