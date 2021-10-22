@@ -15,5 +15,26 @@
     </div>
   </section><!-- Fin Imagen de esta Pagina -->
 
+  {% for titulo in titulo %}
+    <h2 class="text-center text-danger">{{titulo.nombre}}</h2><br>
+    <h5 class="text-center text-secondary">{{titulo.descripcion}}</h5> 
+  {% endfor %} 
+  <div class="container-sm" style="padding: 10px; margin: 10px;"> 
+    <div class="row">  
+        {% for folder in folder %}
+         
+        <div class="col-sm-6">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">{{folder.nombre}}</h5>
+                <p class="card-text">{{folder.agno}}</p>
+                <a href="#" class="btn btn-primary">Ver Documentacion</a>
+              </div>
+            </div>
+          </div>  
+        {% endfor %}
+      </div>     
+    </div>            
+
 
 {% endblock %}

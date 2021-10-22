@@ -9,6 +9,8 @@ def acceso(request):
 
 
 def ver(request,item_id):
-   #item=Item.objects.filter(id=item_id)
-   return render(request,"AccesoApp/ver.html")
+   nom=Item.objects.filter(id=item_id)
+   folder=FolderItem.objects.filter(item_id=item_id)#obtengo el folder
+   #data=DocumentosItem.objects.filter(folder_id=folder) 
+   return render(request,"AccesoApp/ver.html",{"folder":folder,"titulo":nom})
     

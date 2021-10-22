@@ -28,17 +28,15 @@
                     la siguiente información, que podrá ser consultada de manera directa o a través 
                     de los portales electrónicos de cada sujeto obligado:
                 </p>
+            <div class="row">    
             {% for items in items %}
-                <div class="row">
-                    <div class="col-md-4">
+                
+                    <div class="col-md-3">
                         <div class="card mb-4 shadow-sm">
                             <img src="{{ items.imagen.url }}" alt="">
                             <div class="card-body" style="background-color:#5B8DFF;">
                                 <p class="text-white text-center">
                                     {{ items.nombre }}
-                                </p>
-                                <p class="text-white text-center" style="font-size: 11px;">
-                                    {{ items.descripcion }}
                                 </p>
                                 <p class="text-white text-center">
                                     <a type="button" class="btn btn-danger" href="{% url 'ver' items.id %}">Ver</a>
