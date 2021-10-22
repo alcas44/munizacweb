@@ -19,3 +19,12 @@ class Item(models.Model):
 
     def __str__(self):
         return self.nombre #como va a aparecer en el panel admin 
+
+
+#guardado de dato en los items
+# Nombre de los Folders Contenedores
+
+class FolderItem(models.Model):
+    nombre=models.CharField(max_length=30)
+    agno=models.CharField(max_length=4)#sin guiones ni comas
+    
