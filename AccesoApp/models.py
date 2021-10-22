@@ -43,6 +43,7 @@ class FolderItem(models.Model):
 class DocumentosItem(models.Model):
     folder=models.ForeignKey(FolderItem,on_delete=models.CASCADE)
     documento=models.FileField(upload_to="items/documentos/pdf")
+    agno=models.CharField(max_length=4)
     usuario=models.ForeignKey(User,on_delete=models.CASCADE)
     created=models.DateTimeField(auto_now_add=True)
     updated=models.DateTimeField(auto_now_add=True)
