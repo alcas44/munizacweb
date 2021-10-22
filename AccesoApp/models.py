@@ -25,6 +25,31 @@ class Item(models.Model):
 # Nombre de los Folders Contenedores
 
 class FolderItem(models.Model):
+    item=models.ForeignKey(Item,on_delete=models.CASCADE)
     nombre=models.CharField(max_length=30)
     agno=models.CharField(max_length=4)#sin guiones ni comas
-    
+    usuario=models.ForeignKey(User,on_delete=models.CASCADE)
+    created=models.DateTimeField(auto_now_add=True)
+    updated=models.DateTimeField(auto_now_add=True)
+
+    class Meta:#nombre que tendran en singular y plural
+        verbose_name="folderitem"
+        verbose_name_plural="foldersitems"
+
+    def __str__(self):
+        return self.nombre #como va a aparecer en el panel admin 
+
+
+class DocumentosItem(models.Model):
+    folder=models.ForeignKey(FolderItem,on_delete=models.CASCADE)
+    documento=models.FileField(upload_to="items/documentos/pdf")
+    usuario=models.ForeignKey(User,on_delete=models.CASCADE)
+    created=models.DateTimeField(auto_now_add=True)
+    updated=models.DateTimeField(auto_now_add=True)
+
+    class Meta:#nombre que tendran en singular y plural
+        verbose_name="documentoitem"
+        verbose_name_plural="documentositems"
+
+    def __str__(self):
+        return str(self.folder) #como va a aparecer en el panel admin 
