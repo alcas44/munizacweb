@@ -11,10 +11,10 @@ def acceso(request):
 def ver(request,item_id):
    nom=Item.objects.filter(id=item_id)
    folder=FolderItem.objects.filter(item_id=item_id)#obtengo el folder
-   #data=DocumentosItem.objects.filter(folder_id=folder) 
    return render(request,"AccesoApp/ver.html",{"folder":folder,"titulo":nom})
 
 
 def carpeta(request,folder_id):
-   return render(request,"AccesoApp/carpeta.html")   
+   data=DocumentosItem.objects.filter(folder_id=folder_id) 
+   return render(request,"AccesoApp/carpeta.html",{"data":data})   
     

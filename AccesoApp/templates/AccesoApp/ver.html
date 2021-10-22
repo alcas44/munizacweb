@@ -14,7 +14,7 @@
 
     </div>
   </section><!-- Fin Imagen de esta Pagina -->
-
+  <br>
   {% for titulo in titulo %}
     <h2 class="text-center text-danger">{{titulo.nombre}}</h2><br>
     <h5 class="text-center text-secondary">{{titulo.descripcion}}</h5> 
@@ -22,16 +22,16 @@
   <div class="container-sm" style="padding: 10px; margin: 10px;"> 
     <div class="row">  
         {% for folder in folder %}
-         
-        <div class="col-sm-3">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">{{folder.nombre}}</h5>
-                <p class="card-text">{{folder.agno}}</p>
-                <a href="{% url 'carpeta' folder.id %}" class="btn btn-primary">Ver</a>
-              </div>
-            </div>
-          </div>  
+        
+        <div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
+          <div class="card-header text-center">{{folder.item}}</div>
+          <div class="card-body text-center">
+            <h5 class="card-title text-center">
+              <a href="{% url 'carpeta' folder.id %}">{{folder.nombre}}</a>
+            </h5>
+            <div class="card-footer bg-transparent border-success">{{folder.updated}}</div>
+          </div>
+        </div> 
         {% endfor %}
       </div>     
     </div>            

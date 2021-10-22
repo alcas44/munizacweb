@@ -13,31 +13,27 @@
       <script type="text/javascript" src="https://www.tutiempo.net/s-widget/l_JetArBYxdzB91a8UMfzDzzjDjtuUTcDlbYEtEZioKEj"></script>
 
     </div>
-  </section><!-- Fin Imagen de esta Pagina -->
-  {% for dato in folder %}
-  <h1>{{dato.folder}}</h1>
-  {% endfor %}
-<!--
-  {% for titulo in titulo %}
-    <h2 class="text-center text-danger">{{titulo.nombre}}</h2><br>
-    <h5 class="text-center text-secondary">{{titulo.descripcion}}</h5> 
-  {% endfor %} 
-  <div class="container-sm" style="padding: 10px; margin: 10px;"> 
-    <div class="row">  
-        {% for folder in folder %}
-         
-        <div class="col-sm-3">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">{{folder.nombre}}</h5>
-                <p class="card-text">{{folder.agno}}</p>
-                <a href="#" class="btn btn-primary">Ver</a>
-              </div>
-            </div>
-          </div>  
-        {% endfor %}
-      </div>     
-    </div>            
--->
+  </section>
+
+  <br>
+  
+<div class="container-sm">
+  <table class="table table-bordered" style="width: 100%; height: auto; text-align: center;">
+    <thead style="background-color: grey; color: white;">
+      <td>Hilo</td>
+      <td>Año</td>
+      <td>Documento</td>
+    </thead>
+    {% for data in data %}  
+    <tbody>
+      <td>{{data.folder}}</td>
+      <td>{{data.agno}}</td>
+      <td><a href="{{ data.documento.url }}"><img src="../../../media/icons/pdf_img.jpg" width="40px;" /></a></td>  
+    </tbody>
+    {% endfor %}
+  </table>
+</div>
+
+  
 
 {% endblock %}
