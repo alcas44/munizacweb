@@ -1,41 +1,44 @@
+from django.forms import models
 from django.shortcuts import redirect, render
+from SolicitudApp.models import Solicitar
 from .forms import FormularioSolicitud
 from django.core.mail import EmailMessage #para enviar correos
+import random
 
 # Create your views here.
 def solicitud(request):
-    formulario_solicitud= FormularioSolicitud()#instanciar
-    if request.method=="POST":
-        formulario_solicitud=FormularioSolicitud(data=request.POST)
-        if formulario_solicitud.is_valid():
-           id=request.POST.get("id")
-           nombre=request.POST.get("nombre")
-           apellido=request.POST.get("apellido")
-           dpi=request.POST.get("dpi")
-           email=request.POST.get("email")
-           depa=request.POST.get("depa")
-           muni=request.POST.get("muni")
-           medio=request.POST.get("medio")
-           contenido=request.POST.get("contenido")
-           #preparar envio de archivos
-           enviar=EmailMessage("Nueva Solicitud de Informacion",
-            "Usuario {} {} con Correo Electronico {} solicita que por medio {}  lo siguiente \n\n {}".format(nombre,apellido,email,medio,contenido),"",
-            ["juanchovargas26@gmail.com"],reply_to=[email])
+    
+    form = FormularioSolicitud()
+    if request.method =="POST":
+        form = FormularioSolicitud(request.POST)
+
+        if form.is_valid():
+          # almacenamiento de datos
+          data = Solicitar()
+          data.nombre = form.cleaned_data['nombre']
+          data.apellido = form.cleaned_data['apellido']
+          data.dpi = form.cleaned_data['dpi']
+          data.email = form.cleaned_data['email']
+          data.depa = form.cleaned_data['depa']
+          data.muni = form.cleaned_data['muni']
+          data.medio = form.cleaned_data['medio']
+          data.contenido = form.cleaned_data['contenido']
+          data.token = random.randint(10000,99999)+1
+          data.save()
+          
+          # envio de correo de confirmacion
+          email=EmailMessage("Confirmacion para Solicitud de Datos",
+            "El Señor(a)(ito)(ita) {},{} con Numero de Solicitud {} ha solicitado {} para ser enviado por medio {} al correo {}"
+            .format(data.nombre,data.apellido,data.token,data.contenido,data.medio,data.email),"",
+            ["cescmazariegos@gmail.com"],["cescmc44@gmail.com"],reply_to=[data.email])
             #enviar los datos
         try:
-            enviar.send()
+            email.send()
             return redirect("/solicitudonline/?valido")#importar redirect
         except:
-            return redirect("/solicitudonline/?novalido")#importar redirect        
-           
+            return redirect("/solicitudonline/?novalido")#importar redirect    
 
-           #redireccion despues de el envio de post
-        #return redirect("/contacto/?valido")#importar redirect 
-    
+        
 
-    return render(request,"SolicitudApp/solicitud.html",{'formulario':formulario_solicitud})
+    return render(request,"SolicitudApp/solicitud.html",{"formulario":form})
 
-# Create your views here.
-
-# def solicitud(request):
-#     return render(request,"SolicitudApp/solicitud.html")
