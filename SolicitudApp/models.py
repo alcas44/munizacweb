@@ -11,4 +11,4 @@ class Solicitar(models.Model):
     muni=models.CharField(max_length=100)
     medio=models.CharField(max_length=100)
     contenido=models.CharField(max_length=500)
-    token=models.CharField(max_length=800)
+    token=models.CharField(max_length=50)

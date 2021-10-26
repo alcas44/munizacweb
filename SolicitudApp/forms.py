@@ -1,4 +1,5 @@
 from django import forms
+from django.forms import models
 from django.forms.widgets import Textarea
 
 class FormularioSolicitud(forms.Form):
