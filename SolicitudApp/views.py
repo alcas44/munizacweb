@@ -9,7 +9,7 @@ import random
 def solicitud(request):
     
     form = FormularioSolicitud()
-    if request.method =="POST":
+    if request.method == "POST":
         form = FormularioSolicitud(request.POST)
 
         if form.is_valid():
@@ -27,10 +27,10 @@ def solicitud(request):
           data.save()
           
           # envio de correo de confirmacion
-          email=EmailMessage("Confirmacion para Solicitud de Datos",
-            "El Usuario {} {} \n\n con Numero de Solicitud {} \n\n ha solicitado {} \n\n para ser enviado por medio {} al correo {}"
+          email=EmailMessage("Comprobante para Solicitud de Datos",
+            "El Usuario {} {} \n\n con Numero de Solicitud {} \n\n ha solicitado {} \n\n para ser enviado por medio {} al correo {} \n\n"
             .format(data.nombre,data.apellido,data.token,data.contenido,data.medio,data.email),"",
-            ["cescmazariegos@gmail.com"],["cescmc44@gmail.com"],reply_to=[data.email])
+            ["cescmazariegos@gmail.com"],[data.email],reply_to=[data.email])
             #enviar los datos
         try:
             email.send()
