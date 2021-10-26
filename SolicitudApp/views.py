@@ -28,7 +28,7 @@ def solicitud(request):
           
           # envio de correo de confirmacion
           email=EmailMessage("Confirmacion para Solicitud de Datos",
-            "El Señor(a)(ito)(ita) {},{} con Numero de Solicitud {} ha solicitado {} para ser enviado por medio {} al correo {}"
+            "El Señor(a)(ito)(ita) {} {} \n\n con Numero de Solicitud {} \n\n ha solicitado {} \n\n para ser enviado por medio {} al correo {}"
             .format(data.nombre,data.apellido,data.token,data.contenido,data.medio,data.email),"",
             ["cescmazariegos@gmail.com"],["cescmc44@gmail.com"],reply_to=[data.email])
             #enviar los datos
