@@ -43,7 +43,6 @@
               <li><a href="{% url 'Acceso' %}">Informacion Publica de Oficio</a></li>
               <li><a href="{% url 'Solicitud' %}">Solicitudes Online</a></li>
               <li><a href="{% url 'Leyes' %}">Ley de Acceso a la Informacion Publica</a></li>
-              <li><a href="#">Avisos</a></li>
             </ul>
           </li>
           <li class="dropdown"><a class="{% if request.path == '//' %}active{% endif %}" 
@@ -70,7 +69,7 @@
             </ul>
           </li>
           <li><a class="{% if request.path == '/noticias/' %}active{% endif %}" href="{% url 'Noticias' %}">Noticias</a></li>
-          <li><a class="{% if request.path == '//' %}active{% endif %}" href="#">Documentales</a></li>
+          <li><a class="{% if request.path == '/documentales/' %}active{% endif %}" href="{% url 'Documentales' %}">Documentales</a></li>
           <li><a class="{% if request.path == '/webmail/' %}active{% endif %}" href="https://webmail.munizac.gob.gt/">WebMail</a></li>          
           <li><a class="{% if request.path == '/contacto/' %}active{% endif %}" href="{% url 'Contacto' %}">Contactanos</a></li>
         </ul>
