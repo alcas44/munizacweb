@@ -54,3 +54,20 @@ class DocumentosItem(models.Model):
 
     def __str__(self):
         return str(self.folder) #como va a aparecer en el panel admin 
+
+
+
+# class AvisosAcceso(models.Model):
+#     nombre=models.CharField(max_length=100)
+#     descripcion=models.CharField(max_length=100)
+#     imagen=models.ImageField(upload_to="AvisosAccesoInfoPublica/img")
+#     usuario=models.ForeignKey(User,on_delete=models.CASCADE)
+#     created=models.DateTimeField(auto_now_add=True)
+#     updated=models.DateTimeField(auto_now_add=True)
+
+#     class Meta:#nombre que tendran en singular y plural
+#         verbose_name="aviso"
+#         verbose_name_plural="avisos"
+
+#     def __str__(self):
+#         return self.nombre #como va a aparecer en el panel admin           

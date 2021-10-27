@@ -17,4 +17,4 @@ def ver(request,item_id):
 def carpeta(request,folder_id):
    data=DocumentosItem.objects.filter(folder_id=folder_id) 
    return render(request,"AccesoApp/carpeta.html",{"data":data})   
-    
+

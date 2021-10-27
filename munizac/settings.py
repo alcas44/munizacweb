@@ -45,7 +45,6 @@ INSTALLED_APPS = [
     'AccesoApp',
     'SolicitudApp',
     'LeyesApp',
-    'AvisosAccesoApp',
 ]
 
 MIDDLEWARE = [

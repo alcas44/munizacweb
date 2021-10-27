@@ -23,7 +23,6 @@ urlpatterns = [
     path('contacto/',include('ContactoApp.urls')),
     path('acceso/',include('AccesoApp.urls')),
     path('leyes/',include('LeyesApp.urls')),
-    path('avisos/',include('AvisosAccesoApp.urls')),
     path('solicitudonline/',include('SolicitudApp.urls')),
     path('',include('InicioApp.urls')),
 ]
