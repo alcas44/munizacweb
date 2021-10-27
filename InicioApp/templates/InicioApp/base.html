@@ -43,7 +43,7 @@
               <li><a href="{% url 'Acceso' %}">Informacion Publica de Oficio</a></li>
               <li><a href="{% url 'Solicitud' %}">Solicitudes Online</a></li>
               <li><a href="{% url 'Leyes' %}">Ley de Acceso a la Informacion Publica</a></li>
-              <li><a href="#">Avisos</a></li>
+              <li><a href="{% url 'Avisos' %}">Avisos</a></li>
             </ul>
           </li>
           <li class="dropdown"><a class="{% if request.path == '//' %}active{% endif %}" 
