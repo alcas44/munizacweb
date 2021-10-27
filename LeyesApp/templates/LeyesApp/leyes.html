@@ -14,8 +14,20 @@
 
     </div>
   </section><!-- Fin Imagen de esta Pagina -->
-
+<div class="container-sm" aling="center" style="margin: 10px; padding: 10px;">
 <h3 class="text-center text-danger">DOCUMENTACION DE LEYES ACCESO A LA INFORMACION PUBLICA</h3>
-
+<table class="table table-bordered" style="width: 100%; height: auto; text-align: center;">
+    <thead style="background-color: grey; color: white;">
+      <td>Documento</td>
+      <td>Archivo</td>
+    </thead>
+{% for doc in docs %}
+<tbody>
+  <td>{{doc.nombre}}</td>
+  <td><a href="{{ doc.documento.url }}"><img src="../../../media/icons/pdf_img.jpg" width="40px;" /></a></td>  
+</tbody>
+{% endfor %}
+</table>
+</div>
 
 {% endblock %}
