@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'ContactoApp',
     'AccesoApp',
     'SolicitudApp',
+    'LeyesApp',
 ]
 
 MIDDLEWARE = [

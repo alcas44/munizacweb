@@ -22,6 +22,7 @@ urlpatterns = [
     path('noticias/',include('NoticiasApp.urls')),
     path('contacto/',include('ContactoApp.urls')),
     path('acceso/',include('AccesoApp.urls')),
+    path('leyes/',include('LeyesApp.urls')),
     path('solicitudonline/',include('SolicitudApp.urls')),
     path('',include('InicioApp.urls')),
 ]
