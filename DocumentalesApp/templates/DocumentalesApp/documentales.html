@@ -7,20 +7,30 @@
 
 <h3 class="text-center text-danger" style="padding: 20px;">SECCION DE DOCUMENTALES</h3>
 
-<div class="videos">
-  {% for video in doc %}
-  <iframe width="560" height="315" 
-  src="{{video.url}}" 
-  title="YouTube video player" 
-  frameborder="0" 
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-  allowfullscreen>
-  </iframe>
-  <div>
-    <p>{{video.nombre}}</p>
+<div class="container-sm">
+  <div class="row">
+{% for video in doc %}
+  <div class="col">
+    <iframe width="520" height="315" 
+        src="{{video.url|escape}}" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+    </iframe>
+    <div class="ft-vd" style="border-style:groove; width: 520px;">
+      {{video.nombre|escape}}<br>
+      {{video.descripcion|escape}}<br>
+      {{video.oficina|escape}}
+    </div>  
   </div>
-  {% endfor %}
+{% endfor %}
 </div>
+</div>
+
+
+
+
 
 
 {% endblock %}

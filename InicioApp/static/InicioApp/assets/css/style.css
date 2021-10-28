@@ -1355,8 +1355,21 @@ section {
 }
 
 .videos{
-    display: inline-block;
+    display: inline;
     width: 200px;
     height: 100px;
     margin: 1.5em;
+}
+
+.ft-vd{
+ background-color:navy;
+ color: white;
+ text-align: center;
+ font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+ border-radius: 15px;
+ margin-bottom: 10px;
+}
+
+.ft-vd :hover{
+  zoom: 10px;
 }
