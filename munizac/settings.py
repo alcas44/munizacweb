@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'LeyesApp',
     'DocumentalesApp',
     'embed_video',
+    'LoginApp',
 ]
 
 MIDDLEWARE = [
