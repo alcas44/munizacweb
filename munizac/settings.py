@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     'LeyesApp',
     'DocumentalesApp',
     'embed_video',
-    'LoginApp',
+    'RegistroUsuarioApp',
 ]
 
 MIDDLEWARE = [
@@ -161,4 +161,3 @@ EMAIL_HOST_USER="mmsistemas4@gmail.com"
 EMAIL_HOST_PASSWORD="informatik17"
 
 
-#X_FRAME_OPTIONS = 'SAMEORIGIN'
