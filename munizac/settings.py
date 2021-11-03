@@ -46,8 +46,8 @@ INSTALLED_APPS = [
     'SolicitudApp',
     'LeyesApp',
     'DocumentalesApp',
+    'LoginApp',
     'embed_video',
-    'RegistroUsuarioApp',
 ]
 
 MIDDLEWARE = [
@@ -145,6 +145,7 @@ MEDIA_ROOT=os.path.join(BASE_DIR,'media')#ojo hay que importar os osea import os
 #si hay mas de una app dentro de media hacer mas subcarpetas
 #en el archivo imagen en models ponemos imagen=models.ImageField(upload_to='servicios')
 #servicios seria la subcarpeta dentro de media
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
