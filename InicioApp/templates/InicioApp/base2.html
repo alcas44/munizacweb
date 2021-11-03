@@ -92,7 +92,13 @@
                         <!--Item Logeo de Menu-->
                         <li class="user-profile header-notification">
                             <a href="#!">
-                                <span>Usuario</span>
+                                <span>{% for va in va %}
+                                    {% if logeo %}
+                                    {{va.username}}
+                                    {% else %}
+                                      <p>Autenticate</p>
+                                    {% endif %}  
+                                    {% endfor %}</span>
                                 <i class="ti-angle-down"></i>
                             </a>
                             <ul class="show-notification profile-notification">
