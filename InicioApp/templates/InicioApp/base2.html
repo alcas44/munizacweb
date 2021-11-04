@@ -56,47 +56,16 @@
                        </ul>
                        <ul class="nav-right">
  
-                        <!--Item 1 de Menu-->
-                        <li class="user-profile header-notification">
-                            <a href="#!">
-                                <span>Gestiones</span>
-                                <i class="ti-angle-down"></i>
-                            </a>
-                            <ul class="show-notification profile-notification">
-                                <li>
-                                    <a href="#!">
-                                        <i class="ti-settings"></i> Configuraciones
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="ti-user"></i> Perfil
-                                    </a>
-                                </li>
-                                
-                                <li>
-                                    <a href="#">
-                                        <i class="ti-lock"></i> Actividad
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                    <i class="ti-layout-sidebar-left"></i> Cerrar Sesion
-                                </a>
-                                </li>
-                            </ul>
-                        </li>
-                           
                         <!--Fin Item 1 de Menu-->
 
                         <!--Item Logeo de Menu-->
                         <li class="user-profile header-notification">
                             <a href="#!">
                                 <span>{% for va in va %}
-                                    {% if logeo %}
+                                    {% if logeo and va.is_active %}
                                     {{va.username}}
                                     {% else %}
-                                      <p>Autenticate</p>
+                                      
                                     {% endif %}  
                                     {% endfor %}</span>
                                 <i class="ti-angle-down"></i>
@@ -119,7 +88,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="{% url 'Salir' %}">
                                     <i class="ti-layout-sidebar-left"></i> Cerrar Sesion
                                 </a>
                                 </li>

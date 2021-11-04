@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from django.contrib.auth.views import *
+from django.contrib.auth.views import LogoutView, LoginView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,6 +28,5 @@ urlpatterns = [
     path('solicitudonline/',include('SolicitudApp.urls')),
     path('documentales/',include('DocumentalesApp.urls')),
     path('login/',include('LoginApp.urls')),
-    #path('tuespacio/',include('TuEspacioApp.urls')),
     path('',include('InicioApp.urls')),
 ]

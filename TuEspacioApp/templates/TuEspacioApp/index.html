@@ -5,7 +5,28 @@
 
 {% block content %}
 <br><br><br>
-
+<div class="container-sm">
+    <div class="container-sm" style="display: inline-block;">
+        <div id="TT_JetArBYxdzB91a8UMfzDzzjDjtuUTcDlbYEtEZioKEj"></div>
+        <script type="text/javascript" src="https://www.tutiempo.net/s-widget/l_JetArBYxdzB91a8UMfzDzzjDjtuUTcDlbYEtEZioKEj"></script>
+    </div>
+    <div class="container-sm" style="display: inline-block; float: right;">
+    {% for va in va %}
+        {% if logeo and va.is_active %}
+        <ul>
+            <ol>Bienvenido, <b>{{va.first_name}} {{va.last_name}}</b></ol>
+            <ol>Ultima Sesion, <b>{{va.last_login}}</b></ol>
+        </ul>  
+        {% else %}                           
+        {% endif %}  
+    {% endfor %}
+    </div>
+</div>
  
+<main ALIGN="center">
+<h3>TUS SERVICIOS ASOCIADOS</h3>
+</main>
+
+
 
 {% endblock %}

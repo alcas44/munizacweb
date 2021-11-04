@@ -1,0 +1,26 @@
+{% extends "InicioApp/baselogin.html" %}
+
+{% load static %}
+
+
+{% block content %}
+
+{% if logeo != True %}
+<div class="container-sm" style="padding-top: 150px; margin: 20px;">
+<div class="alert alert-danger" role="alert" ALIGN="center">
+    {{msj}}    
+</div>
+<div class="container-sm" ALIGN="center">
+<a href="{% url 'Login' %}" type="button" class="btn btn-primary">Intertar</a>
+<a href="{% url 'Inicio' %}" type="button" class="btn btn-danger">Inicio</a>
+</div>
+</div>
+{% else %}
+<a href="{% url 'Inicio' %}" type="button" class="btn btn-danger">Inicio</a>                        
+ {% endif %}  
+
+
+
+{% endblock %}
+
+
