@@ -61,15 +61,10 @@
                         <!--Item Logeo de Menu-->
                         <li class="user-profile header-notification">
                             <a href="#!">
-                                <span>{% for va in va %}
-                                    {% if logeo and va.is_active %}
-                                    {{va.username}}
-                                    {% else %}
-                                      
-                                    {% endif %}  
-                                    {% endfor %}</span>
+                                <span>{{user}}</span>
                                 <i class="ti-angle-down"></i>
                             </a>
+                            
                             <ul class="show-notification profile-notification">
                                 <li>
                                     <a href="#!">
@@ -88,7 +83,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="{% url 'Salir' %}">
+                                    <a href="{% url 'exit' %}">
                                     <i class="ti-layout-sidebar-left"></i> Cerrar Sesion
                                 </a>
                                 </li>
@@ -109,8 +104,6 @@
 
 <!--Menu Barra Lateral-->
 <!--Fin Menu Barra Lateral-->
-
-
 
     {% block content %}
 

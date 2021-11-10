@@ -7,3 +7,6 @@ def inicio(request):
     requisitos=Requisito.objects.all()# se almacena todo los productos en la bd
 
     return render(request,"InicioApp/inicio.html",{"eventos":eventos,"requisitos":requisitos})
+
+
+    

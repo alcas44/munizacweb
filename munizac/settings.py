@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+from django.urls import reverse_lazy
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -46,7 +47,7 @@ INSTALLED_APPS = [
     'SolicitudApp',
     'LeyesApp',
     'DocumentalesApp',
-    'LoginApp',
+    'SesionApp',
     'TuEspacioApp',
     'embed_video',
 ]
@@ -62,6 +63,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'munizac.urls'
+
 
 TEMPLATES = [
     {
@@ -147,7 +149,6 @@ MEDIA_ROOT=os.path.join(BASE_DIR,'media')#ojo hay que importar os osea import os
 #en el archivo imagen en models ponemos imagen=models.ImageField(upload_to='servicios')
 #servicios seria la subcarpeta dentro de media
 
-LOGIN_REDIRECT_URL = '/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -164,3 +165,4 @@ EMAIL_HOST_USER="mmsistemas4@gmail.com"
 EMAIL_HOST_PASSWORD="informatik17"
 
 
+LOGIN_URL = "TuEspacioApp/index.html"
