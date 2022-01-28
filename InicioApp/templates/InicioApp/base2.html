@@ -21,7 +21,7 @@
   </head>
 
   <body>
-
+    {% if user.is_authenticated and user.is_active %}
     
        <!-- Pre-loader start -->
     <div class="theme-loader">
@@ -83,7 +83,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="{% url 'exit' %}">
+                                    <a href="{% url 'Logout' %}">
                                     <i class="ti-layout-sidebar-left"></i> Cerrar Sesion
                                 </a>
                                 </li>
@@ -104,7 +104,7 @@
 
 <!--Menu Barra Lateral-->
 <!--Fin Menu Barra Lateral-->
-
+{% endif %}
     {% block content %}
 
 

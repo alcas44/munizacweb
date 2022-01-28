@@ -1,0 +1,23 @@
+{% extends 'InicioApp/baselogin.html' %}
+
+{% block content %}
+
+<div class="container" align="center">
+    <br>
+    <h4>Login Munizac</h4>
+    <br>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <label for="usuario">Usuario</label>
+        {{form.username}}
+        <label for="pass">Password</label>
+        {{form.password}}
+        <br>
+        <div class="container" align="center">
+            <button type="submit">Ingresar</button>
+            <button type="reset">Cancelar</button>
+        </div>
+
+    </form>
+</div>
+{% endblock %}

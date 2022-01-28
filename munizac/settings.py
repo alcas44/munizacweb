@@ -47,8 +47,8 @@ INSTALLED_APPS = [
     'SolicitudApp',
     'LeyesApp',
     'DocumentalesApp',
-    'SesionApp',
-    'TuEspacioApp',
+    'LoginApp',
+    'EspacioApp',
     'embed_video',
 ]
 
