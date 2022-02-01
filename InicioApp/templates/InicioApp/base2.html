@@ -104,29 +104,35 @@
            <!--fin de menu Usuario de Logeo-->
 
 <!--Menu Barra Lateral-->
+
 <!--Fin Menu Barra Lateral-->
-{% endif %}
+
 <br><br><br><br>
-<div class="container" align="center">
-    <div class="container" align="right">
-        Hola {{user.first_name}} {{user.last_name}}
-    </div>
-    <div class="container" align="right">
-        Tu Ultima Sesion {{user.last_login}}
-    </div>
-    <div class="container" align="right">
+
+<div class="container">
+    <div class="row">
+      <div class="col">
+        <img src="https://scontent.faqb1-1.fna.fbcdn.net/v/t39.30808-6/253689258_435660521257028_545831151172141579_n.jpg?_nc_cat=105&ccb=1-5&_nc_sid=e3f864&_nc_ohc=-fPvDilYg9MAX86eN3q&_nc_oc=AQnweAYoKF_tQBUInwz_eaXHmDIFmpp8oKl62p_yxH4kpLNQauKJQbGXgT2C1j11h-w&_nc_ht=scontent.faqb1-1.fna&oh=00_AT_EqBI7lwVBTV8Mb05_KVo12q5ekW-LUG6CuoTAqxquUw&oe=61FF63E1" 
+        class="card-img" style="width: 550px;">
+      </div>
+      <div class="col" align="center" style="padding: 50px;">
+        Hola <strong>{{user.first_name}} {{user.last_name}}</strong><br>
+        Tu Ultima Sesion <strong>{{user.last_login}}</strong>
         <div id="TT_JetArBYxdzB91a8UMfzDzzjDjtuUTcDlbYEtEZioKEj"></div>
         <script type="text/javascript" src="https://www.tutiempo.net/s-widget/l_JetArBYxdzB91a8UMfzDzzjDjtuUTcDlbYEtEZioKEj"></script>
+      </div>
     </div>
-</div>
+  </div>
+
+
 <br><br>
-    {% block content %}
+{% block content %}
 
 
 
 
 
-    {% endblock %}
+{% endblock %}
 
      
 <!-- Required Jquery -->
@@ -155,3 +161,4 @@
 </body>
 
 </html>
+{% endif %}
