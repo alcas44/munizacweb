@@ -8,6 +8,7 @@
 
       <!-- Google font-->
       <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!-- Required Fremwork -->
       <link rel="stylesheet" type="text/css" href="{% static 'LoginApp/assets/css/bootstrap/css/bootstrap.min.css ' %}">
       <!-- themify-icons line icon -->
@@ -105,6 +106,20 @@
 <!--Menu Barra Lateral-->
 <!--Fin Menu Barra Lateral-->
 {% endif %}
+<br><br><br><br>
+<div class="container" align="center">
+    <div class="container" align="right">
+        Hola {{user.first_name}} {{user.last_name}}
+    </div>
+    <div class="container" align="right">
+        Tu Ultima Sesion {{user.last_login}}
+    </div>
+    <div class="container" align="right">
+        <div id="TT_JetArBYxdzB91a8UMfzDzzjDjtuUTcDlbYEtEZioKEj"></div>
+        <script type="text/javascript" src="https://www.tutiempo.net/s-widget/l_JetArBYxdzB91a8UMfzDzzjDjtuUTcDlbYEtEZioKEj"></script>
+    </div>
+</div>
+<br><br>
     {% block content %}
 
 
