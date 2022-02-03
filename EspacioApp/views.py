@@ -1,11 +1,15 @@
 from django.shortcuts import render,redirect
 
 def principal(request):
-    if not request.user.is_authenticated:
+    if not request.user.is_authenticated and not request.user.is_active:
         return redirect('/')
     else:   
         return render(request,'EspacioApp/principal.html')
 
 
-#ver si ademas de preguntar si esta autenticado preguntar si tambien esta activado el usuario
-#y mandar mensaje a la raiz y decir que no esta autenticado y activo
+def perfil(request):
+    return render(request,'EspacioApp/perfil.html')
+
+
+def actividad(request):
+    return render(request,'EspacioApp/actividad.html')

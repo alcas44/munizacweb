@@ -15,7 +15,6 @@ def login_start(request):
             if user is not None:
                 login(request,user)
                 request.session['member_id'] = user.id	
-                messages.info(request,f'Bienvendio {usuario}')
                 return redirect('Principal')
             else:
                 messages.info(request,'Credenciales Erroneas')

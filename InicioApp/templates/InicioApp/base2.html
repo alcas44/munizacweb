@@ -40,7 +40,7 @@
                <div class="navbar-wrapper">
                  <!--parate donde esta el boton de menu-->
                    <div class="navbar-logo">
-                       <a href="#">
+                       <a href="{% url 'Principal' %}">
                            MuniZac WorkSpace
                        </a>
                        <a class="mobile-options">
@@ -68,18 +68,13 @@
                             
                             <ul class="show-notification profile-notification">
                                 <li>
-                                    <a href="#!">
-                                        <i class="ti-settings"></i> Configuraciones
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
+                                    <a href="{% url 'Perfil' %}">
                                         <i class="ti-user"></i> Perfil
                                     </a>
                                 </li>
                                 
                                 <li>
-                                    <a href="#">
+                                    <a href="{% url 'Actividad' %}">
                                         <i class="ti-lock"></i> Actividad
                                     </a>
                                 </li>
@@ -117,6 +112,7 @@
       </div>
       <div class="col" align="center" style="padding: 50px;">
         Hola <strong>{{user.first_name}} {{user.last_name}}</strong><br>
+        Email <strong>{{user.email}}</strong><br>
         Tu Ultima Sesion <strong>{{user.last_login}}</strong>
         <div id="TT_JetArBYxdzB91a8UMfzDzzjDjtuUTcDlbYEtEZioKEj"></div>
         <script type="text/javascript" src="https://www.tutiempo.net/s-widget/l_JetArBYxdzB91a8UMfzDzzjDjtuUTcDlbYEtEZioKEj"></script>
