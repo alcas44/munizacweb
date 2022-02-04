@@ -1,0 +1,25 @@
+{% extends 'InicioApp/base2.html' %}
+
+{% block content %}
+
+<div class="container" align="center">
+    <div class="alert alert-success" role="alert">
+    <br> Tu Muni Informa <br><br>
+    </div>
+</div>
+
+<div class="container" align="center">
+
+    {% for info in info %}
+    <figure class="figure">
+        <img src="{{info.imagen.url}}" class="figure-img img-fluid rounded" alt="..." width="450">
+        <figcaption class="figure-caption">{{info.nombre}}</figcaption>
+        <figcaption class="figure-caption">{{info.descripcion}}</figcaption>
+        <figcaption class="figure-caption">{{info.fecha}}</figcaption>
+    </figure>
+    {% endfor %}
+
+</div>
+
+{% endblock %}
+
